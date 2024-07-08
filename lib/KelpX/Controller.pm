@@ -3,8 +3,8 @@ package KelpX::Controller;
 use Kelp::Base;
 use Carp;
 
-attr context => sub { croak 'context is required for controller' };
-attr app => sub { $_[0]->context->app };
+attr -context => sub { croak 'context is required for controller' };
+attr -app => sub { $_[0]->context->app };
 
 sub req
 {

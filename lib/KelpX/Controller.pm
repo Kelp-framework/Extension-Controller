@@ -66,6 +66,8 @@ KelpX::Controller - Base custom controller for Kelp
 
 	attr context_obj => 'KelpX::Controller::Context';
 
+	...
+
 =head1 DESCRIPTION
 
 Since Kelp I<2.16> it's quite easy to introduce your own base controller class

@@ -103,6 +103,20 @@ A build method, which will be called right after the controller is
 instantiated. Takes no arguments and does nothing by default - it's up to you
 to override it.
 
+To avoid a very common trap you may fall into if you set routes in your
+controller, you should put all route-setting code in your controller after a
+guard clause like the one below:
+
+	sub build
+	{
+		my ($self) = @_;
+
+		... # common code for controllers
+
+		return unless ref $self eq __PACKAGE__;
+		# all code below will not be repeated in subclasses
+	}
+
 =head2 req
 
 Proxy for reading the C<req> attribute from L</context>.

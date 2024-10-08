@@ -16,18 +16,6 @@ sub res
 	return $_[0]->context->res;
 }
 
-sub before_dispatch
-{
-	my $self = shift;
-	return $self->app->before_dispatch(@_);
-}
-
-sub before_finalize
-{
-	my $self = shift;
-	return $self->app->before_finalize(@_);
-}
-
 sub build
 {
 }

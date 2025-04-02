@@ -59,13 +59,11 @@ KelpX::Controller - Base custom controller for Kelp
 =head1 DESCRIPTION
 
 Since Kelp I<2.16> it's quite easy to introduce your own base controller class
-instead of subclassing the main application class. While Kelp gives you this
-option, it trusts you will develop your own infrastructure for that.
+instead of subclassing the main application class.
 
-This module is a toolbox for less tedious integration of custom controller
-class into your application. It consists of two classes, C<KelpX::Controller>
-and C<KelpX::Controller::Context>. They must be used in tandem as shown in
-L</SYNOPSIS>.
+This extension is a more modern approach to route handling, which lets you have
+a proper hierarchy of custom classes which serve as controllers. Enabling it is
+easy, and can be done as shown in L</SYNOPSIS>.
 
 The controller will be built just like a regular object the first time it's
 used. It will not be cleared after the request, since the context object will

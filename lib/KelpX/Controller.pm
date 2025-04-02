@@ -121,6 +121,19 @@ Proxy for C<before_dispatch> from L</app>.
 
 Proxy for C<before_finalize> from L</app>.
 
+=head1 CAVEATS
+
+=over
+
+=item
+
+When using this module, even subroutine based routes will be run using the
+application's main controller (instead of application instance). Thanks to
+this, main class will never be used as call context for route handlers, so any
+hooks like C<before_dispatch> can be safely moved to the base controller.
+
+=back
+
 =head1 SEE ALSO
 
 L<Kelp>

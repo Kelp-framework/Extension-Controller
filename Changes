@@ -1,6 +1,7 @@
 Revision history for Perl extension KelpX::Controller.
 
 {{$NEXT}}
+	- All routes in an app will now use the base controller as call context
 
 1.02 - 2024-10-08
 	- Updated for Kelp 2.18

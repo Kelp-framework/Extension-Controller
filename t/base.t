@@ -14,7 +14,7 @@ my $t = Kelp::Test->new(app => $app);
 $t->request(GET '/')
 	->code_is(200)
 	->header_is('X-Framework', 'Perl Kelp')
-	->header_is('X-Dispatch', 'true')
+	->header_is('X-Dispatch', 'TestApp::Controller')
 	->json_cmp(
 		{
 			class => 'TestApp::Controller',
@@ -29,6 +29,21 @@ $t->request(GET '/')
 # try again to make sure the controller is persistent
 $t->request(GET '/')
 	->code_is(200)
+	->json_cmp(
+		{
+			class => 'TestApp::Controller',
+			app => 'TestApp',
+			context => 'KelpX::Controller::Context',
+			req => 'Kelp::Request',
+			res => 'Kelp::Response',
+			test => 1,
+		}
+	);
+
+$t->request(GET '/sub')
+	->code_is(200)
+	->header_is('X-Framework', 'Perl Kelp')
+	->header_is('X-Dispatch', 'TestApp::Controller')
 	->json_cmp(
 		{
 			class => 'TestApp::Controller',

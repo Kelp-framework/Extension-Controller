@@ -1,6 +1,8 @@
 Revision history for Perl extension KelpX::Controller.
 
 {{$NEXT}}
+
+2.00 - 2025-04-02
 	- Add 'build_controllers' to context
 	- Add 'add_route' to controller
 	- 'build' method of controllers will not be called if it was not reimplemented

@@ -1,6 +1,7 @@
 package KelpX::Controller::Context;
 
 use Kelp::Base 'Kelp::Context';
+use Module::Loader;
 
 attr persistent_controllers => !!1;
 
@@ -9,7 +10,19 @@ sub build_controller
 	my ($self, $class) = @_;
 	return $class->new(context => $self);
 }
-#
+
+sub build_controllers
+{
+	my ($self) = @_;
+
+	my $base = $self->controller;
+	my @subcontrollers = Module::Loader->new->find_modules(ref $base);
+
+	foreach my $controller (@subcontrollers) {
+		$self->controller("+$controller");
+	}
+}
+
 sub set_controller
 {
 	my ($self, $class) = @_;

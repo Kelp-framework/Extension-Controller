@@ -8,8 +8,10 @@ sub build
 {
 	my $self = shift;
 
-	$self->add_route('/' => 'dump');
-	$self->add_route('/sub' => $self->dumper_sub);
+	# app add_route, not controller's (check if all routes hit the controller)
+	$self->add_route('/dump_sub' => $self->dumper_sub);
+
+	$self->context->build_controllers;
 }
 
 sub before_dispatch

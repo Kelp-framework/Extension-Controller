@@ -36,6 +36,7 @@ sub dumper_sub
 			context => ref $self->context,
 			req => ref $self->req,
 			res => ref $self->res,
+			extra => [@_],
 		};
 	};
 }

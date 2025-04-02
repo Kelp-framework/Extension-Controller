@@ -26,7 +26,7 @@ sub dump
 {
 	my $self = shift;
 
-	return $self->app->dumper_sub->($self);
+	return $self->app->dumper_sub->($self, __PACKAGE__);
 }
 
 1;

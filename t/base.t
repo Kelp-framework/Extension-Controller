@@ -24,6 +24,7 @@ subtest 'should access controller route' => sub {
 				req => 'Kelp::Request',
 				res => 'Kelp::Response',
 				test => 1,
+				extra => ['TestApp::Controller'],
 			}
 		);
 
@@ -38,6 +39,7 @@ subtest 'should access controller route' => sub {
 				req => 'Kelp::Request',
 				res => 'Kelp::Response',
 				test => 1,
+				extra => ['TestApp::Controller'],
 			}
 		);
 };
@@ -55,6 +57,7 @@ subtest 'should access controller plain subroutine route' => sub {
 				req => 'Kelp::Request',
 				res => 'Kelp::Response',
 				test => 1,
+				extra => [],
 			}
 		);
 };
@@ -72,6 +75,7 @@ subtest 'should access nested controller route' => sub {
 				req => 'Kelp::Request',
 				res => 'Kelp::Response',
 				test => 2,
+				extra => ['TestApp::Controller::Nested'],
 			}
 		);
 };
@@ -89,6 +93,7 @@ subtest 'should access nested controller plain subroutine route' => sub {
 				req => 'Kelp::Request',
 				res => 'Kelp::Response',
 				test => 2,
+				extra => [],
 			}
 		);
 };
@@ -106,6 +111,7 @@ subtest 'should allow declaring routes with controller names' => sub {
 				req => 'Kelp::Request',
 				res => 'Kelp::Response',
 				test => 2,
+				extra => ['TestApp::Controller::Nested'],
 			}
 		);
 };

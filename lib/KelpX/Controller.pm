@@ -106,6 +106,8 @@ KelpX::Controller - Base custom controller for Kelp
 	### your main application class
 	package My::Kelp;
 
+	use Kelp::Base 'Kelp';
+
 	attr context_obj => 'KelpX::Controller::Context';
 
 	sub build
